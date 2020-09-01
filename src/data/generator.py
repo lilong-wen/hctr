@@ -123,7 +123,7 @@ class Tokenizer():
     def encode(self, text):
         """Encode text to vector"""
 
-        text = unicodedata.normalize("NFKD", text).encode("ASCII", "ignore").decode("ASCII")
+        text = unicodedata.normalize("NFKD", text).encode("utf-8", "ignore").decode("utf-8")
         text = " ".join(text.split())
         encoded = []
 
