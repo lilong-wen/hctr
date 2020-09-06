@@ -231,6 +231,10 @@ class HTRModel:
                                        top_paths=self.top_paths)
 
             probabilities.extend([np.exp(x) for x in log])
+            # optional: could fix bugs in some tf version 
+            # may be caused by tf version compatibility
+            # probabilities.extend([map(np.exp, log)])
+            # decode = [decode[0].eval()] 
             decode = [[[int(p) for p in x if p != -1] for x in y] for y in decode]
             predicts.extend(np.swapaxes(decode, 0, 1))
 
