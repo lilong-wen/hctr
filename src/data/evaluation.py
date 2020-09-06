@@ -20,9 +20,9 @@ def ocr_metrics(predicts, ground_truth, norm_accentuation=False, norm_punctuatio
 
         if norm_accentuation:
             # pd = unicodedata.normalize("NFKD", pd).encode("ASCII", "ignore").decode("ASCII")
-            pd = unicodedata.normalize("NFKD", pd).encode("ASCII", "ignore").decode("utf-8")
+            pd = unicodedata.normalize("NFKD", pd).encode("utf-8", "ignore").decode("utf-8")
             # gt = unicodedata.normalize("NFKD", gt).encode("ASCII", "ignore").decode("ASCII")
-            gt = unicodedata.normalize("NFKD", gt).encode("ASCII", "ignore").decode("utf-8")
+            gt = unicodedata.normalize("NFKD", gt).encode("utf-8", "ignore").decode("utf-8")
 
         if norm_punctuation:
             pd = pd.translate(str.maketrans("", "", string.punctuation))
