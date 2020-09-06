@@ -7,6 +7,12 @@ import datetime
 import string
 import codecs
 
+from tensorflow.compat.v1 import ConfigProto
+from tensorflow.compat.v1 import InteractiveSession
+config = ConfigProto()
+config.gpu_options.allow_growth = True
+session = InteractiveSession(config=config)
+
 # define parameters
 source = "casia"
 arch = "flor"
