@@ -66,7 +66,8 @@ class DataGenerator():
             y_train = [self.tokenizer.encode(y) for y in y_train]
             y_train = pad_sequences(y_train, maxlen=self.tokenizer.maxlen, padding="post")
 
-            yield (x_train, y_train, [])
+            # yield (x_train, y_train, [])
+            yield (x_train, y_train)
 
     def next_valid_batch(self):
         """Get the next batch from validation partition (yield)"""
@@ -87,7 +88,8 @@ class DataGenerator():
             y_valid = [self.tokenizer.encode(y) for y in y_valid]
             y_valid = pad_sequences(y_valid, maxlen=self.tokenizer.maxlen, padding="post")
 
-            yield (x_valid, y_valid, [])
+            # yield (x_valid, y_valid, [])
+            yield (x_valid, y_valid)
 
     def next_test_batch(self):
         """Return model predict parameters"""
