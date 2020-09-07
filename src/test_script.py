@@ -30,7 +30,7 @@ input_size = (1024, 128, 1)
 max_text_length = 128
 
 if source == 'casia':
-    content_tmp = codecs.open("./raw/casia/char_set.txt", encoding='utf-8').read()
+    content_tmp = codecs.open("../raw/casia/char_set.txt", encoding='utf-8').read()
     charset_base = "".join(content_tmp.split())
 else:
     charset_base = string.printable[:95]
